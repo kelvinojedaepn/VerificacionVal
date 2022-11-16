@@ -9,7 +9,7 @@ public class Main {
         String password;
 
         cedula = JOptionPane.showInputDialog(null, "Ingrese su cédula", "Log in", JOptionPane.INFORMATION_MESSAGE);
-        if (true) {
+        if (validarCedula(cedula)) {
             password = JOptionPane.showInputDialog(null, "Ingrese su contraseña", "Log in", JOptionPane.INFORMATION_MESSAGE);
             if (validarContrasenia(password)) {
                 JOptionPane.showMessageDialog(null, "Ingreso correctamente", "Log in", JOptionPane.INFORMATION_MESSAGE);
@@ -30,10 +30,10 @@ public class Main {
         return mat.matches() ? true : false;
     }
 
-//    public static boolean validarCedula(String cedula) {
-//        Pattern pat = Pattern.compile("^\\d{10}$");
-//        Matcher mat = pat.matcher(cedula);
-//        return mat.matches() ? true : false;
-//    }
+    public static boolean validarCedula(String cedula) {
+        Pattern pat = Pattern.compile("^\\d{10}$");
+        Matcher mat = pat.matcher(cedula);
+        return mat.matches() ? true : false;
+    }
 
 }
